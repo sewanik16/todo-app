@@ -2,7 +2,7 @@ let totalTaskElement = document.querySelector("#total-task");
 let inputTextElement = document.querySelector("#input-text");
 let todoArray = JSON.parse(localStorage.getItem("todolist"));
 displayTodolist();
-
+console.log("Github running");
 let dueDateElement = document.querySelector("#due-date");
 dueDateElement.innerText = `| Due Date : ${new Date()
   .toDateString()
