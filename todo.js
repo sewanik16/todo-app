@@ -1,3 +1,5 @@
+let editIndex = -1;
+let deleteIndex = -1;
 let totalTaskElement = document.querySelector("#total-task");
 let inputTextElement = document.querySelector("#input-text");
 let todoArray = JSON.parse(localStorage.getItem("todolist"));
@@ -16,8 +18,10 @@ inputTextElement.addEventListener("keydown", function (e) {
 function handleAdd() {
   let inputValue = inputTextElement.value;
   if (inputValue == "") return;
+
   if (editIndex != -1) {
     todoArray.splice(editIndex, 1, inputValue);
+    editIndex = -1;
   } else {
     todoArray.push(inputValue);
   }
@@ -26,12 +30,12 @@ function handleAdd() {
   inputTextElement.focus();
 }
 function handleClear() {
-  todoArray = [];
-  if (confirm("Are you sure you want to delete all tasks") == true)
+  if (confirm("Are you sure you want to delete all tasks") == true) {
+    todoArray = [];
     displayTodolist();
+  }
 }
-let editIndex = -1;
-let deleteIndex = -1;
+
 function handleEdit(index) {
   inputTextElement.value = todoArray[index];
   editIndex = index;
