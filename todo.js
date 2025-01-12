@@ -47,6 +47,8 @@ function displayTodolist() {
   let newHTML = "";
   let divElement = document.querySelector(".todo-list");
   divElement.innerHTML = "";
+  console.log(todoArray);
+  console.log(typeof todoArray);
   todoArray.forEach((task, index) => {
     newHTML = `<div class="task">
            <p>${task}</p>
