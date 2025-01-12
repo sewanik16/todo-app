@@ -5,7 +5,6 @@ let inputTextElement = document.querySelector("#input-text");
 //let todoArray = JSON.parse(localStorage.getItem("todolist"));
 let todoArray = [];
 displayTodolist();
-console.log("Github running");
 let dueDateElement = document.querySelector("#due-date");
 dueDateElement.innerText = `| Due Date : ${new Date()
   .toDateString()
@@ -51,8 +50,6 @@ function displayTodolist() {
   let newHTML = "";
   let divElement = document.querySelector(".todo-list");
   divElement.innerHTML = "";
-  console.log(todoArray);
-  console.log(typeof todoArray);
   todoArray.forEach((task, index) => {
     newHTML = `<div class="task">
            <p>${task}</p>
