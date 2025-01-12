@@ -2,9 +2,10 @@ let editIndex = -1;
 let deleteIndex = -1;
 let totalTaskElement = document.querySelector("#total-task");
 let inputTextElement = document.querySelector("#input-text");
-let todoArray = JSON.parse(localStorage.getItem("todolist"));
+//let todoArray = JSON.parse(localStorage.getItem("todolist"));
+let todoArray = [];
 displayTodolist();
-
+console.log("Github running");
 let dueDateElement = document.querySelector("#due-date");
 dueDateElement.innerText = `| Due Date : ${new Date()
   .toDateString()
@@ -25,7 +26,7 @@ function handleAdd() {
   } else {
     todoArray.push(inputValue);
   }
-  localStorage.setItem("todolist", JSON.stringify(todoArray));
+  //localStorage.setItem("todolist", JSON.stringify(todoArray));
   displayTodolist();
   inputTextElement.focus();
 }
@@ -43,13 +44,15 @@ function handleEdit(index) {
 }
 function handleDelete(index) {
   todoArray.splice(index, 1);
-  localStorage.setItem("todolist", JSON.stringify(todoArray));
+  //localStorage.setItem("todolist", JSON.stringify(todoArray));
   displayTodolist();
 }
 function displayTodolist() {
   let newHTML = "";
   let divElement = document.querySelector(".todo-list");
   divElement.innerHTML = "";
+  console.log(todoArray);
+  console.log(typeof todoArray);
   todoArray.forEach((task, index) => {
     newHTML = `<div class="task">
            <p>${task}</p>
