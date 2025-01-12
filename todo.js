@@ -1,3 +1,4 @@
+console.log("Nikhil rathod");
 let totalTaskElement = document.querySelector("#total-task");
 let inputTextElement = document.querySelector("#input-text");
 //let todoArray = JSON.parse(localStorage.getItem("todolist"));
