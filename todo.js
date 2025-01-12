@@ -1,6 +1,7 @@
 let totalTaskElement = document.querySelector("#total-task");
 let inputTextElement = document.querySelector("#input-text");
-let todoArray = JSON.parse(localStorage.getItem("todolist"));
+//let todoArray = JSON.parse(localStorage.getItem("todolist"));
+let todoArray = [];
 displayTodolist();
 console.log("Github running");
 let dueDateElement = document.querySelector("#due-date");
@@ -21,7 +22,7 @@ function handleAdd() {
   } else {
     todoArray.push(inputValue);
   }
-  localStorage.setItem("todolist", JSON.stringify(todoArray));
+  //localStorage.setItem("todolist", JSON.stringify(todoArray));
   displayTodolist();
   inputTextElement.focus();
 }
@@ -39,7 +40,7 @@ function handleEdit(index) {
 }
 function handleDelete(index) {
   todoArray.splice(index, 1);
-  localStorage.setItem("todolist", JSON.stringify(todoArray));
+  //localStorage.setItem("todolist", JSON.stringify(todoArray));
   displayTodolist();
 }
 function displayTodolist() {
