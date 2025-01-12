@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+    <link rel="stylesheet" href="todo.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="todo-input">
+        <input
+          type="text"
+          id="input-text"
+          placeholder="Enter Todo Task"
+          autocomplete="off"
+        />
+        <!-- <input type="date" id="input-date" /> -->
+        <button class="btn add-btn" onclick="handleAdd()">Add</button>
+        <button class="btn clear-btn" onclick="handleClear()">Clear</button>
+      </div>
+      <span id="total-task">Total Task : 0</span>
+      <span id="due-date">| Due Date : 12-12-2025</span>
+      <span>| Nikhil Rathod</span>
+      <hr />
+      <div class="todo-list">
+        <div>
+          <p>Add Today's <u>Tasks</u></p>
+        </div>
+        <!-- <div class="task">
+          <p>This is my first todo task</p>
+          <button class="btn edit-btn">Edit</button>
+          <button class="btn delete-btn">Delete</button>
+        </div> -->
+      </div>
+    </div>
+    <script src="todo.js"></script>
+  </body>
+</html>
