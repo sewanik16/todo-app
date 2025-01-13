@@ -33,6 +33,8 @@ function handleClear() {
   if (confirm("Are you sure you want to delete all tasks") == true) {
     todoArray = [];
     displayTodolist();
+    inputTextElement.focus();
+    totalTaskElement.innerText = `Total : 0 Tasks`;
   }
 }
 
@@ -45,10 +47,16 @@ function handleDelete(index) {
   todoArray.splice(index, 1);
   //localStorage.setItem("todolist", JSON.stringify(todoArray));
   displayTodolist();
+  inputTextElement.focus();
+  totalTaskElement.innerText = `Total : ${todoArray.length} Tasks`;
 }
 function displayTodolist() {
-  let newHTML = "";
   let divElement = document.querySelector(".todo-list");
+  if (todoArray.length == 0) {
+    divElement.innerHTML = `<div><label for="input-text">Add Today's <u>Task</u></label></div>`;
+    return;
+  }
+  let newHTML = "";
   divElement.innerHTML = "";
   todoArray.forEach((task, index) => {
     newHTML = `<div class="task">
